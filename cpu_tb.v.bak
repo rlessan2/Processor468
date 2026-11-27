@@ -1,0 +1,77 @@
+`timescale 1ns/1ps
+// ENGR 468 - Milestone 2: full CPU test
+// Loads the program text file (one 32-bit binary instruction per line) into
+// RAM starting at address 0, then runs it. Each instruction takes 2 clocks.
+// The number of instructions is counted from the file, so any length works.
+// Data values can be placed in the same file with an @address line (address in hex),
+// e.g. "@100" then the data words; they are copied to RAM before the program starts.
+// At the end the registers are displayed and the whole RAM is written to OUTPUT_FILE.
+module cpu_tb;
+parameter PROGRAM_FILE = "program.txt";
+parameter OUTPUT_FILE  = "ram_output.txt";   // output data file (copy of the RAM)
+
+reg Clk = 0, Reset = 0;
+integer i, ProgramLen;
+
+CPU dut (.Clk(Clk), .Reset(Reset));
+always #5 Clk = ~Clk;
+
+initial begin
+    // RAM starts as all x, so after loading, the first x word marks the end of the program
+    $readmemb(PROGRAM_FILE, dut.RAM.Ram);
+    ProgramLen = 0;
+    while (ProgramLen < 65536 && dut.RAM.Ram[ProgramLen] !== 32'bx)
+        ProgramLen = ProgramLen + 1;
+    $display("Loaded %0d instructions from %s", ProgramLen, PROGRAM_FILE);
+
+    // Clear every RAM location the file did not load to 0 (keeps any data values)
+    for (i = ProgramLen; i < 65536; i = i + 1)
+        if (dut.RAM.Ram[i] === 32'bx)
+            dut.RAM.Ram[i] = 32'd0;
+
+    #12 Reset = 1;
+
+    // Run until the last instruction has finished its data phase
+    wait (dut.PC == ProgramLen);
+    @(posedge Clk);                       // last instruction's data phase
+    #1;
+
+    $display("\n--- Final state ---");
+    for (i = 0; i < 16; i = i + 1)
+        $display("R%0d\t= %h (%0d)", i, reg_value(i), $signed(reg_value(i)));
+    $display("Flags NZCV = %b", dut.DP.Flags);
+
+    $display("\n--- RAM: program (address 0 to %0d) ---", ProgramLen - 1);
+    for (i = 0; i < ProgramLen; i = i + 1)
+        $display("Ram[%0d]\t= %b", i, dut.RAM.Ram[i]);
+    $display("\n--- RAM: data (every non-zero location after the program) ---");
+    for (i = ProgramLen; i < 65536; i = i + 1)
+        if (dut.RAM.Ram[i] != 0)
+            $display("Ram[%0d]\t= %h (%0d)", i, dut.RAM.Ram[i], dut.RAM.Ram[i]);
+
+    $writememh(OUTPUT_FILE, dut.RAM.Ram);
+    $display("\nRAM copied to %s", OUTPUT_FILE);
+    $finish;
+end
+
+// Trace: one line per instruction, printed during its data phase
+always @(negedge Clk)
+    if (Reset && dut.DataPhase)
+        $display("PC=%0d IR=%b | RegWrite=%b R%0d<=%h | RAM %s addr=%0d din=%h | FlagsNext=%b",
+                 dut.PC - 1, dut.IR, dut.DP.ALUWriteEnable, dut.DP.Destination,
+                 dut.DP.WriteData, dut.RamReadWrite ? "R" : "W", dut.RamAddr,
+                 dut.RamDin, dut.DP.FlagsNext);
+
+function [31:0] reg_value(input integer n);
+    case (n)
+        0: reg_value = dut.DP.RB.Q0;   1: reg_value = dut.DP.RB.Q1;
+        2: reg_value = dut.DP.RB.Q2;   3: reg_value = dut.DP.RB.Q3;
+        4: reg_value = dut.DP.RB.Q4;   5: reg_value = dut.DP.RB.Q5;
+        6: reg_value = dut.DP.RB.Q6;   7: reg_value = dut.DP.RB.Q7;
+        8: reg_value = dut.DP.RB.Q8;   9: reg_value = dut.DP.RB.Q9;
+        10: reg_value = dut.DP.RB.Q10; 11: reg_value = dut.DP.RB.Q11;
+        12: reg_value = dut.DP.RB.Q12; 13: reg_value = dut.DP.RB.Q13;
+        14: reg_value = dut.DP.RB.Q14; default: reg_value = dut.DP.RB.Q15;
+    endcase
+endfunction
+endmodule

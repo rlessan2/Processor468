@@ -1,0 +1,54 @@
+// ENGR 468 - Milestone 2, Part 1
+// Connects the Register Bank to the ALU, with a Flags register and Condition Check
+module Datapath (
+    MemAddr, MemWriteData, CondMet, Flags, ALUResult,
+    Clk, Reset, Cond, Opcode, S, Destination, Source1Sel, Source2Sel,
+    ImmShift, ShiftCmd, WriteData
+);
+    input             Clk, Reset;     // Reset is active-low
+    input      [3:0]  Cond;           // condition code
+    input      [3:0]  Opcode;
+    input             S;              // 1 = update flags
+    input      [3:0]  Destination;    // register to write
+    input      [3:0]  Source1Sel;     // register for ALU input a
+    input      [3:0]  Source2Sel;     // register for ALU input b
+    input      [15:0] ImmShift;       // immediate value / shift amount
+    input      [2:0]  ShiftCmd;       // 000 none, 001 LSR, 010 LSL, 011 ROR
+    input      [31:0] WriteData;      // from LDR MUX in memory_access
+
+    output     [31:0] MemAddr;        // to RAM: address for LDR/STR (Source 1)
+    output     [31:0] MemWriteData;   // to RAM: data for STR (Source 2)
+    output            CondMet;        // to memory_control: condition passed
+    output     [31:0] ALUResult;      // to LDR MUX in memory_access
+    output reg [3:0]  Flags;          // NZCV flags register
+
+    wire [31:0] Source1, Source2;
+    wire [3:0]  FlagsNext, ComputedFlags;
+    wire        ALUWriteEnable;
+
+    // Register Bank
+    RegisterBank RB (
+        Source1, Source2, Clk, Reset, ALUWriteEnable, Destination,
+        WriteData, Source1Sel, Source2Sel
+    );
+
+    // ALU 
+    alu_top ALU (
+        Source1, Source2, ImmShift, Opcode, Cond, ShiftCmd, S, Flags,
+        ALUResult, FlagsNext, ComputedFlags, ALUWriteEnable
+    );
+
+    // Flags register (NZCV)
+    always @(posedge Clk)
+    begin
+        if (~Reset)
+            Flags <= 4'b0000;
+        else
+            Flags <= FlagsNext;
+    end
+
+    // Condition check & memory bus outputs
+    condition_check CC (Flags, Cond, CondMet);
+    assign MemAddr      = Source1;
+    assign MemWriteData = Source2;
+endmodule

@@ -1,0 +1,223 @@
+C:/Users/RemoteSalamanda/Desktop/468/ram.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/ram.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory
+
+Top level modules:
+	memory
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/adder.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/adder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module adder
+
+Top level modules:
+	adder
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/RegisterBank.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/RegisterBank.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RegisterBank
+
+Top level modules:
+	RegisterBank
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/Test_Mux16x1.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/Test_Mux16x1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Test_Mux16x1
+
+Top level modules:
+	Test_Mux16x1
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/memory_access.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/memory_access.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory_access
+
+Top level modules:
+	memory_access
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/Mux16x1.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/Mux16x1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux16x1
+
+Top level modules:
+	Mux16x1
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/Register32.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/Register32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Register32
+
+Top level modules:
+	Register32
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/testfull.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/testfull.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module test_write_memory
+
+Top level modules:
+	test_write_memory
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/Test_Decoder4to16.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/Test_Decoder4to16.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Test_Decoder4to16
+
+Top level modules:
+	Test_Decoder4to16
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/alu32_tb.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/alu32_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu32_tb
+
+Top level modules:
+	alu32_tb
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/adder_tb.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/adder_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module adder_tb
+
+Top level modules:
+	adder_tb
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/alu32_wiring.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/alu32_wiring.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_top
+
+Top level modules:
+	alu_top
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/Test_Datapath.v {1 {vlog -work work -stats=none {C:\Users\RemoteSalamanda\Desktop\468\Test_Datapath.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Test_Datapath
+
+Top level modules:
+	Test_Datapath
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/alu32_subtb.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/alu32_subtb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu32_subtb
+
+Top level modules:
+	alu32_subtb
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/multiplier.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/multiplier.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module multiplier
+
+Top level modules:
+	multiplier
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/testbench_memory.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/testbench_memory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_memory_access
+
+Top level modules:
+	tb_memory_access
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/Test_RegisterBank.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/Test_RegisterBank.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Test_RegisterBank
+
+Top level modules:
+	Test_RegisterBank
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/flag_generator.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/flag_generator.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module flag
+
+Top level modules:
+	flag
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/memory_control.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/memory_control.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory_control
+-- Compiling module addr_bus_mux
+-- Compiling module ldr_mux
+
+Top level modules:
+	memory_control
+	addr_bus_mux
+	ldr_mux
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/Test_Register32.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/Test_Register32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Test_Register32
+
+Top level modules:
+	Test_Register32
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/subtractor.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/subtractor.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module subtractor
+
+Top level modules:
+	subtractor
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/phase_control.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/phase_control.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module phase_ctrl
+
+Top level modules:
+	phase_ctrl
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/alu32_logic_and_shift.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/alu32_logic_and_shift.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_or
+-- Compiling module alu_and
+-- Compiling module alu_xor
+-- Compiling module right_shift
+-- Compiling module left_shift
+-- Compiling module alu_mov_imm
+-- Compiling module alu_mov_reg
+-- Compiling module rotate_right
+-- Compiling module shift_stage_mux
+
+Top level modules:
+	alu_or
+	alu_and
+	alu_xor
+	alu_mov_imm
+	alu_mov_reg
+	shift_stage_mux
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/Decoder4to16.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/Decoder4to16.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Decoder4to16
+
+Top level modules:
+	Decoder4to16
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/main.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/main.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module processor_32bit
+
+Top level modules:
+	processor_32bit
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/testfull_read.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/testfull_read.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module test_read_memory
+
+Top level modules:
+	test_read_memory
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/Datapath.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/Datapath.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Datapath
+
+Top level modules:
+	Datapath
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/alu32_control.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/alu32_control.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module condition_check
+-- Compiling module opcode_mux
+
+Top level modules:
+	condition_check
+	opcode_mux
+
+} {} {}} C:/Users/RemoteSalamanda/Desktop/468/testbench_ram.v {1 {vlog -work work -stats=none C:/Users/RemoteSalamanda/Desktop/468/testbench_ram.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module test_memory
+
+Top level modules:
+	test_memory
+
+} {} {}}
